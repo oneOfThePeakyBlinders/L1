@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recursiveDom</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример</title>
+</head>
+<body>
+<div id="element">
+    <div>рекурсия</div>
+    <div>dom</div>
+    <div>реализованна</div>
+</div>
+<script>
+    const element = document.getElementById('element');
+    recursiveDOMTraversal(element);
+
+    function recursiveDOMTraversal(node) {
+        console.log(node.tagName);
+
+        // рекурсивный обход дочерних узлов
+        for (let i = 0; i < node.childNodes.length; i++) {
+            if (node.childNodes[i].nodeType === 1) {
+                recursiveDOMTraversal(node.childNodes[i]);
+            }
+        }
+    }
+</script>
+</body>
+</html>
+
+</body>
+</html>
